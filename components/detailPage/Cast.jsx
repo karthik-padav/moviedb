@@ -39,7 +39,7 @@ export default function Cast({ platform, details }) {
         <b>Series Cast</b>
       </Typography>
       <Box my={2}>
-        <GridListWrapper>
+        <GridListWrapper md={7.5} sm={2.5} xs={2.5}>
           {loader &&
             [1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => (
               <ImageListItem key={item}>

@@ -29,7 +29,7 @@ export default function VideoCardLayout({ data }) {
           id="ytplayer"
           type="text/html"
           width="100%"
-          height="150px"
+          height="200px"
           src={`https://www.youtube-nocookie.com/embed/${key}`}
           frameBorder="0"
         ></iframe>

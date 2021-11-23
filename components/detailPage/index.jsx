@@ -65,7 +65,7 @@ export default function DetailPage(props) {
         // videos={videos}
         // credits={credits}
       />
-      <Grid container>
+      <Grid container spacing={2}>
         <Grid item xs={12} sm={12} md={9}>
           <Box pt={2}>
             <Cast details={details} platform={platform} />

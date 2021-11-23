@@ -40,7 +40,7 @@ export default function ScrollAbleGrid(props) {
         ))}
       </Box>
       <Box my={2}>
-        <GridListWrapper>
+        <GridListWrapper md={7.5} sm={2.5} xs={2.5}>
           {selectedList?.data?.map((item, index) => (
             <ImageListItem key={index}>
               <Link href={`${selectedList?.category}/${item.id}`}>

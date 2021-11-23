@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({}));
 export default function RightSidePanel({ details, platform }) {
   const classes = useStyles();
   return (
-    <Box p={2} pl={0}>
+    <Box p={2}>
       <Keywords details={details} platform={platform} />
     </Box>
   );

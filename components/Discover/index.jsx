@@ -97,8 +97,8 @@ export default function Discover(props) {
                 <Grid container spacing={2}>
                   {loader ? (
                     <>
-                      {[1, 2, 3, 4, 5, 6, 7, 8].map((i, index) => (
-                        <Grid item md={3} key={index}>
+                      {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+                        <Grid item md={3} sm={6} xs={6} key={i}>
                           <CardSkeleton />
                         </Grid>
                       ))}
@@ -106,7 +106,7 @@ export default function Discover(props) {
                   ) : (
                     <>
                       {list.map((item, index) => (
-                        <Grid item md={3} key={index}>
+                        <Grid item md={3} sm={6} xs={6} key={index}>
                           <Box>
                             <Link href={`${platform}/${item.id}`}>
                               <a>
