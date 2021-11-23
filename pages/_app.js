@@ -2,14 +2,14 @@ import { Provider } from "react-redux";
 import { store } from "redux/store";
 import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { useState, useEffect } from "react";
-import Head from "next/head";
+import { useEffect } from "react";
 import { getTheme } from "theme/theme";
 import "../styles/globals.css";
 import { Router } from "next/dist/client/router";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import { loadCSS } from "fg-loadcss";
+import constants from "js/Constants";
 
 Router.events.on("routeChangeStart", () => {
   NProgress.start();
@@ -24,6 +24,7 @@ Router.events.on("routeChangeError", () => {
 export default function MyApp(props) {
   const { Component, pageProps } = props;
   const getLayout = Component.getLayout || ((page) => page);
+  const GOOGLE_ANALYTICS = constants.GOOGLE_ANALYTICS;
 
   useEffect(() => {
     const jssStyles = document.querySelector("#jss-server-side");
@@ -41,6 +42,22 @@ export default function MyApp(props) {
 
   return (
     <Provider store={store}>
+      {GOOGLE_ANALYTICS && (
+        <>
+          <Script
+            strategy="lazyOnload"
+            src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS}`}
+          />
+          <Script strategy="lazyOnload">
+            {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', ${GOOGLE_ANALYTICS});
+        `}
+          </Script>
+        </>
+      )}
       <ThemeProvider theme={getTheme()}>
         {getLayout(
           <>
