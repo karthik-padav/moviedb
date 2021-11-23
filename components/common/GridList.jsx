@@ -4,7 +4,6 @@ import Box from "@material-ui/core/Box";
 import ImageList from "@material-ui/core/ImageList";
 import ImageListItem from "@material-ui/core/ImageListItem";
 import "react-circular-progressbar/dist/styles.css";
-import { calculateCols } from "js/CommonUtils";
 
 const useStyles = makeStyles((theme) => ({
   imageList: {
@@ -20,25 +19,26 @@ function getWindowDimensions() {
 
 export default function GridListWrapper(props) {
   const classes = useStyles();
-  const { children, cols = 7.5 } = props;
+  const { children, md = 7.5, sm = 2.5, xs = 2.5 } = props;
   const [windowDimensions, setWindowDimensions] = useState();
   const isServer = typeof window === "undefined";
 
-  // useEffect(() => {
-  //   if (!isServer) {
-  //     function handleResize() {
-  //       setWindowDimensions(getWindowDimensions());
-  //     }
-  //     window.addEventListener("resize", handleResize);
-  //     return () => window.removeEventListener("resize", handleResize);
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (!isServer) {
+      function handleResize() {
+        setWindowDimensions(getWindowDimensions());
+      }
+      setWindowDimensions(getWindowDimensions());
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
 
   return (
     <Box position="relative">
       <ImageList
         className={classes.imageList}
-        cols={cols}
+        cols={windowDimensions?.innerWidth <= 768 ? xs : md}
         rowHeight="auto"
         gap={10}
       >

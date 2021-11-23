@@ -48,7 +48,7 @@ export default function Trailer({ details, platform }) {
         <b>Trailer</b>
       </Typography>
       <Box my={2}>
-        <GridListWrapper cols={3.5}>
+        <GridListWrapper md={3.5} sm={1.5} xs={1.5}>
           {loader &&
             [1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => (
               <ImageListItem key={item}>
