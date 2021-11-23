@@ -10,6 +10,7 @@ import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import { loadCSS } from "fg-loadcss";
 import constants from "js/Constants";
+import Script from "next/script";
 
 Router.events.on("routeChangeStart", () => {
   NProgress.start();
