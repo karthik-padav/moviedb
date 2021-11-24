@@ -17,7 +17,6 @@ export default function Index(props) {
     onAirTvList,
     SEO = { ...getSeoDetails() },
   } = props;
-  console.log(props, "props123");
   return (
     <>
       <NextSeo {...SEO} />
