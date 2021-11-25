@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
 const menuList = [
   { title: "Privacy Policy", href: "/privacy-policy" },
-  { title: "About", href: "/about" },
+  // { title: "About", href: "/about" },
 ];
 
 export default function Footer(props) {

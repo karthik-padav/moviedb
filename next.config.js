@@ -4,5 +4,6 @@ module.exports = {
   },
   env: {
     API_KEY: process.env.API_KEY,
+    GOOGLE_ANALYTICS: process.env.GOOGLE_ANALYTICS,
   },
 };
