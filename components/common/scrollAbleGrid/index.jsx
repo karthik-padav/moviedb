@@ -32,7 +32,6 @@ export default function ScrollAbleGrid(props) {
               label={item.title}
               clickable
               color="primary"
-              color="primary"
               onClick={() => setSelectedList(item)}
               variant={selectedList?.id === item.id ? "default" : "outlined"}
             />
@@ -43,10 +42,8 @@ export default function ScrollAbleGrid(props) {
         <GridListWrapper md={7.5} sm={2.5} xs={2.5}>
           {selectedList?.data?.map((item, index) => (
             <ImageListItem key={index}>
-              <Link href={`${selectedList?.category}/${item.id}`}>
-                <a className={classes.displayBlock}>
+              <Link className={classes.displayBlock} href={`${selectedList?.category}/${item.id}`}>
                   <CardLayout item={item} />
-                </a>
               </Link>
             </ImageListItem>
           ))}

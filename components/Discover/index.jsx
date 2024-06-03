@@ -109,9 +109,7 @@ export default function Discover(props) {
                         <Grid item md={3} sm={6} xs={6} key={index}>
                           <Box>
                             <Link href={`${platform}/${item.id}`}>
-                              <a>
                                 <CardLayout item={item} />
-                              </a>
                             </Link>
                           </Box>
                         </Grid>

@@ -51,9 +51,7 @@ export default function MenuButton(props) {
       >
         {list.map((item, index) => (
           <Link href={item.redirect ? item.redirect : "/"}>
-            <a>
               <MenuItem onClick={handleClose}>{item.title}</MenuItem>
-            </a>
           </Link>
         ))}
       </Menu>

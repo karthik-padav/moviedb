@@ -49,9 +49,9 @@ export default function Cast({ platform, details }) {
           {!loader &&
             credits?.cast?.map((item, index) => (
               <ImageListItem key={index}>
-                <a className={classes.displayBlock}>
+                <div className={classes.displayBlock}>
                   <ProfileCardLayout item={item} />
-                </a>
+                </div>
               </ImageListItem>
             ))}
         </GridListWrapper>
